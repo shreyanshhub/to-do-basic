@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+
+<a href="/add_task/" >New Task</a>
+
+{% for note in user.notes %}
+  <p>
+    {{note.notes}}
+    <a href="/delete_task/{{note.id}}">Delete Task</a>
+  </p>
+{% endfor %}
+<a href="/logout" >Logout</a>
+{% endblock %}
